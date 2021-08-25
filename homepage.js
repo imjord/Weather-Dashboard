@@ -1,8 +1,8 @@
 // dom variables 
 
-var userFormEl = document.querySelector("#user-form");
-var cityInputEl = document.querySelector("#city-name")
-var myButton = document.querySelector("button");
+var userFormEl = $("#user-form");
+var cityInputEl = $("#city-name")
+var myButton = $("button");
 
 
 
@@ -12,19 +12,20 @@ var myButton = document.querySelector("button");
 
 
 // api key 
-var key = "d3c64dccaec48cbde6a3412c1da5a3ec";
+var key = "5eb7d8eaa2f23d433771db6d9ffdd905";
 
 
 // add event listener 
 
-var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl.value}&appid=${key}`
+var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl.val()}&appid=${key}`
 
 
 
 
 
-myButton.addEventListener("click", function(event){
+$("button").click(function(event){
     event.preventDefault();
+    console.log(cityInputEl.val())
     fetch(myApiCall).then(response => response.json()).then(data => console.log(data)).catch(err => alert("Wrong city name"));
 })
 
