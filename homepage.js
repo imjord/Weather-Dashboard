@@ -2,7 +2,7 @@
 
 var userFormEl = document.querySelector("#user-form");
 var cityInputEl = document.querySelector("#city-name")
-
+var myButton = document.querySelector("button");
 
 
 
@@ -15,53 +15,19 @@ var cityInputEl = document.querySelector("#city-name")
 var key = "d3c64dccaec48cbde6a3412c1da5a3ec";
 
 
+// add event listener 
+
+var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl.value}&appid=${key}`
 
 
-var formSubmitHandler = function(event) {
+
+
+
+myButton.addEventListener("click", function(event){
     event.preventDefault();
-    console.log(event);
-
-
-    var cityName = cityInputEl.value.trim();
-
-    // if(cityName) {
-        
-    // } else {
-
-    // }
-
-  };
-
-
-
-  userFormEl.addEventListener("submit", formSubmitHandler);
-
-
-function weatherBoi(lat,lon) {
-
-    var weatherApi = fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${api}`);
-
-
-    // make a request to the url 
-
-    fetch(weatherApi).then(function(response) {
-        response.json().then(function(data) {
-            console.log(data);
-        })
-    })
-    
-}
+    fetch(myApiCall).then(response => response.json()).then(data => console.log(data)).catch(err => alert("Wrong city name"));
+})
 
 
 
 
-function storage(){
-
-}
-
-
-// load .
-
-
-
-// weatherBoi("33","45");
