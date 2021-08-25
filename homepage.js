@@ -17,7 +17,7 @@ var key = "5eb7d8eaa2f23d433771db6d9ffdd905";
 
 // add event listener 
 
-var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl.val()}&appid=${key}`
+
 
 
 
@@ -25,6 +25,7 @@ var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl
 
 $("button").click(function(event){
     event.preventDefault();
+    var myApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEl.val()}&appid=${key}`
     console.log(cityInputEl.val())
     fetch(myApiCall).then(response => response.json()).then(data => console.log(data)).catch(err => alert("Wrong city name"));
 })
