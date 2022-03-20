@@ -31,7 +31,7 @@ var key = "5eb7d8eaa2f23d433771db6d9ffdd905";
 
 $("button").click(function(event){
     event.preventDefault();
-    var myApiCall = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInputEl.val()}&appid=${key}`
+    var myApiCall = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInputEl.val()}&appid=${key}&units=imperial`
     console.log(cityInputEl.val())
     forTitle.html(` Forcast for ${cityInputEl.val()}`)
     searchHistory.push(cityInputEl.val())
