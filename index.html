@@ -7,6 +7,12 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="./weather-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -19,15 +25,16 @@
     <main>
       <div id="weather-data">
         <div id="weather-container"></div>
-      </div>
-      <div class="myForm">
-        <form onsubmit="getWeather(event)">
-          <input type="text" id="city" placeholder="Search City Weather" />
-          <button type="submit">Get Weather</button>
-        </form>
-      </div>
-      <div id="renderSearch">
-        <h2>Previous Cities Searched</h2>
+        <div class="myForm">
+          <form onsubmit="getWeather(event)">
+            <input type="text" id="city" placeholder="Search City Weather" />
+            <p class="error"></p>
+            <button type="submit">Get Weather</button>
+          </form>
+        </div>
+        <div id="renderSearch">
+          <h2>Previous Cities Searched</h2>
+        </div>
       </div>
     </main>
     <script src="./script.js"></script>

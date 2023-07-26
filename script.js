@@ -3,6 +3,7 @@
 let inputEl = document.getElementById("city");
 let apiKey = "5eb7d8eaa2f23d433771db6d9ffdd905";
 let cityListSaved = [];
+let errorEl = document.querySelector(".error");
 const lastSessionCities = localStorage.getItem("lastweather");
 if (lastSessionCities) {
   cityListSaved.push(lastSessionCities);
@@ -10,6 +11,8 @@ if (lastSessionCities) {
 
 async function getWeather(e) {
   e.preventDefault();
+  errorEl.innerText = "";
+
   let myApiCall = `https://api.openweathermap.org/data/2.5/forecast?q=${inputEl.value}&appid=${apiKey}&units=imperial`;
   try {
     let response = await fetch(myApiCall);
@@ -30,6 +33,7 @@ async function getWeather(e) {
     localStorage.setItem("lastweather", cityListSaved);
   } catch (error) {
     console.error("Error fetching weather data:", error.message);
+    errorEl.innerText = "Invalid City, Try again.";
   }
 }
 
@@ -45,6 +49,7 @@ function weatherList(name) {
 
 function listTempature(name, temp) {
   let weatherDataEl = document.getElementById("weather-container");
+  weatherDataEl.innerText = "";
   let pEl = document.createElement("p");
   pEl.classList.add("weather-p");
   pEl.innerText = `${name} tempature today ${temp}`;

@@ -1,23 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   --main-color: rgb(146, 205, 244);
   --sec-color: rgb(177, 217, 244);
 }
 
 body {
-  background-color: #dfdbe5;
+  background-color: #ffc488;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
 }
 
 nav {
-  padding: 10px;
+  padding: 25px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid black;
+  opacity: 0.4;
+  background-color: var(--main-color);
 }
 
 #weather-data {
@@ -29,12 +31,16 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 30px;
   height: 50%;
+  width: 50%;
 }
 
 .weather-p {
-  color: white;
+  color: black;
+  font-size: 3rem;
 }
 
 .myForm {
@@ -47,11 +53,11 @@ nav {
 #city {
   padding: 10px;
   border-radius: 20px;
-  border: none;
+  border: solid var(--main-color);
 }
 
 #city:focus {
-  outline: none;
+  outline: solid var(--main-color);
 }
 
 form {
@@ -65,7 +71,7 @@ button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: black;
   font-size: 20px;
 }
 
@@ -78,10 +84,14 @@ button:hover {
   display: flex;
   margin-top: 30px;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  background-color: white;
   justify-content: center;
+}
+
+.error {
+  color: red;
 }
 
 #renderSearch ul {
@@ -92,5 +102,6 @@ button:hover {
 .prev-list {
   background-color: var(--main-color);
   margin-top: 10px;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 7px;
 }
