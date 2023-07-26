@@ -17,6 +17,9 @@
       </nav>
     </header>
     <main>
+      <div id="weather-data">
+        <div id="weather-container"></div>
+      </div>
       <div class="myForm">
         <form onsubmit="getWeather(event)">
           <input type="text" id="city" placeholder="Search City Weather" />
@@ -26,9 +29,7 @@
       <div id="renderSearch">
         <h2>Previous Cities Searched</h2>
       </div>
-      <div id="weather-data"></div>
     </main>
-    <script src="./script.js" type="module"></script>
-    <script src="config.js" type="module"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

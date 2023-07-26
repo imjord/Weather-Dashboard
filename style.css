@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  --main-color: rgb(146, 205, 244);
+  --sec-color: rgb(177, 217, 244);
 }
 
 body {
@@ -18,6 +20,23 @@ nav {
   border-bottom: 1px solid black;
 }
 
+#weather-data {
+  height: 60vh;
+}
+
+#weather-container {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 50%;
+}
+
+.weather-p {
+  color: white;
+}
+
 .myForm {
   display: flex;
   align-items: center;
@@ -28,16 +47,50 @@ nav {
 #city {
   padding: 10px;
   border-radius: 20px;
+  border: none;
+}
+
+#city:focus {
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 10px;
+  background-color: var(--main-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--sec-color);
 }
 
 #renderSearch {
   display: flex;
+  margin-top: 30px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
+  background-color: white;
+  justify-content: center;
 }
 
 #renderSearch ul {
   list-style: none;
   font-size: 25px;
+}
+
+.prev-list {
+  background-color: var(--main-color);
+  margin-top: 10px;
+  padding: 5px;
 }
